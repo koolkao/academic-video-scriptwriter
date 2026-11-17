@@ -19,8 +19,9 @@ headings and field names exactly. Everything else is free prose.
 
 ## teaching-plan.md
 
-- `## Brief` holds `- Key: value` lines. The checker reads `Target duration` (`m:ss` or `Ns`)
-  and `Speech rate` (`N wpm`; default 150).
+- `## Brief` holds `- Key: value` lines. The checker reads `Target duration` (`m:ss` or `Ns`),
+  `Speech rate` (`N wpm`; default 150), and `Engagement` (default full; `reduced, because …`).
+- `## Puzzle`: the opening question, the claims it rests on, and where the conclusion answers it.
 - `## Objectives` table: `| ID | Viewers can … | Topic |`.
 - `## Topics` table: `| ID | Title | Prerequisites | Takeaway |`, in outline order. The
   Title is the spoken label. It must appear word for word in the roadmap and in the topic's
@@ -43,9 +44,9 @@ Each spoken segment is one line:
 
 - `[S04]` is the scene the segment plays over. Several lines may share a scene, and a scene
   may hold lines of only one topic.
-- `[explain]` is the role: `goal`, `hook`, `roadmap`, `announce`, `introduce`, `explain`,
-  `wrap-up`, `bridge`, `synthesis`. Join roles with `+` when one sentence does both
-  (`[announce+introduce]`), which is normal in short videos.
+- `[explain]` is the role: `goal`, `hook`, `puzzle`, `roadmap`, `announce`, `introduce`,
+  `explain`, `predict`, `reveal`, `unknown`, `wrap-up`, `bridge`, `synthesis`. Join roles with
+  `+` when one sentence does both (`[announce+introduce]`), which is normal in short videos.
 - `{C02}` attaches a claim. Put it on every line that states a fact from the data, including
   counts that are facts about the data ("three hundred and forty two birds", "three species").
   Counts about the video itself ("two parts") are not claims; reword them if the checker warns.
@@ -58,6 +59,18 @@ Each spoken segment is one line:
 Required per topic: `announce`, `introduce`, `explain`, `wrap-up`, `bridge`. The opening needs
 `goal` and `roadmap`; the conclusion needs `synthesis`. The last topic's bridge leads into the
 conclusion.
+
+Engagement roles (`references/engagement.md`):
+
+- `puzzle` in the opening poses a question from the data. The conclusion must then contain a
+  `reveal` that answers it.
+- `predict` asks the viewer to commit to an answer. The line needs at least two seconds of
+  pause (`{look:3}`), and a later `reveal` in the same section. Its scene needs a `Withheld`
+  field. A prediction and its reveal never share a line.
+- `unknown` states plainly what the data cannot answer. It is the only role in which a `gap`
+  claim may be tagged.
+- The checker warns when a video has no puzzle or no prediction, unless the Brief says
+  `Engagement: reduced, because …`.
 
 ## storyboard.md
 
@@ -100,6 +113,8 @@ conclusion.
 - `Orientation text` holds topic labels, chapter headings, and roadmap items. Numbers there
   are not data and are not checked.
 - `Narration: none (silent)` marks a scene with no speech.
+- `Withheld` is required on a scene that carries a `[predict]` line: what stays off screen
+  until the reveal ("species colors; dots stay gray").
 - `Motion` uses the verbs in `references/visuals-and-figures.md`.
 - `Changes` may list several changes in the order they happen, each on its own narration cue
   ("axes appear; then one dot lights; then all dots fill"). Never two at the same moment.

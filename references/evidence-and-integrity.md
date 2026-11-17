@@ -20,6 +20,10 @@ numbers, or illustrative datasets.
   from it may be printed or spoken, and it must agree with what the project reported (a trend
   line's direction matches the reported correlation's sign). Any number printed on a figure must
   trace to a reported value.
+- **Comparing reported values is not computing.** Saying one reported value is larger, smaller,
+  or of opposite sign to another ("stronger than the pooled correlation", "Gentoos are the
+  heaviest") is reading. Saying by how much (a difference, ratio, or percent) is computing,
+  unless the project reported it.
 - **Reading the data is not computing.** Category names, the years or sites present, units, and
   column definitions can be read directly from the data or its documentation. Counts and
   summaries cannot: "three hundred and forty two birds" needs a reported n.
@@ -27,7 +31,7 @@ numbers, or illustrative datasets.
   thousand grams" for a reported 5076 g, with the exact value on screen. It may not say "about
   a third heavier" unless the project reported that ratio.
 - **Missing data stays missing.** If a planned figure or claim has no data behind it, mark it
-  `gap`, take it out of the script, and suggest a replacement: a different figure from data
+  `gap`, take it out of the explanation (an `[unknown]` line may name it), and suggest a replacement: a different figure from data
   that exists, a conceptual diagram, or dropping the point.
 
 ### Conceptual diagrams
@@ -46,7 +50,9 @@ column, table number, figure panel, page). Statuses:
 - `verified`: you opened the source in this run and the values match.
 - `unverified`: you could not open the source, or the user stated the value without a file.
   Production must not start until the author confirms it.
-- `gap`: no support exists. Gap claims never appear in the script. A gap needs no data source;
+- `gap`: no support exists. A gap claim is never stated as if supported. It may be spoken only
+  in an `[unknown]` line that says plainly what the data cannot answer ("Nobody measured diet,
+  so we can't say why"). A gap needs no data source;
   use the Location column to say what was looked for ("no diet variable in D04").
 
 A generated summary is not verification. Only checking the value against the source is.

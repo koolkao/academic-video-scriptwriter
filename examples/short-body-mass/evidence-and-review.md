@@ -55,8 +55,9 @@
 | Terminology | 3 | "Gentoo gap" kept throughout. |
 | Focus | 3 | One focus per scene; cursor only on the interval ends. |
 | Figure building | 3 | Both figures use frame, anchor, fill, pattern, takeaway. |
-| Narration voice | 3 | No hedging; scope stated as fact. |
-| Timing | 3 | First draft ran 1:38 against 1:15; narration tightened and target reset to 1:45. |
+| Narration voice | 3 | No hedging; contractions and direct address; scope stated as fact. |
+| Engagement | 3 | Opening puzzle answered in the conclusion; one prediction with a three-second pause and the dots withheld. |
+| Timing | 3 | First draft ran 1:38 against 1:15; target reset to 1:45, then 2:00 after v0.2 added the puzzle and prediction. |
 | Technology independence | 3 | No tool-specific instructions. |
 
 Scored by the drafting agent; not a fresh-context review.

@@ -1,6 +1,6 @@
 ---
 name: academic-video-scriptwriter
-version: 0.1.0
+version: 0.2.0
 description: |
   Use when planning or writing the script for an academic, scientific, or educational video:
   a lesson, a research-results explainer, a recorded talk, or public or patient education built
@@ -42,6 +42,10 @@ Apply top-down. A lower priority never overrides a higher one.
   concrete facts inside the claim ("in three hundred and forty two adults"); show the full
   statistics on screen. `scripts/banned_phrases.txt` lists the rejected phrasings.
 - **One focus of attention per scene**, led by the figure or by a large cursor.
+- **Engaging by default.** Open with a puzzle from the data and answer it at the end; ask the
+  viewer to predict before a reveal; reason out loud; talk like a person; say plainly what the
+  data cannot tell us. Details: `references/engagement.md`. These work inside the teaching
+  structure, never instead of it.
 - **The section template for every topic:** announce, introduce, explain, wrap up, bridge.
   Topic titles are spoken word for word in the roadmap and in each announcement.
 - **Topics and scenes are tracked separately.** A topic change always gets a spoken announcement
@@ -59,7 +63,8 @@ user asks for; do not add your own for routine steps.
 1. **Read the brief and the materials.** Find the audience and what they already know, the
    purpose, must-cover content, target duration, language, and the project's data and results
    files. List every results table, figure, and data file you may use.
-2. **Teaching plan** (`teaching-plan.md`). Observable objectives; prerequisites, including any
+2. **Teaching plan** (`teaching-plan.md`). The puzzle the video opens with and answers at the
+   end, and where predictions go. Observable objectives; prerequisites, including any
    figure type the audience cannot read yet; topics in prerequisite order with short, stable
    titles; locked terms and pronunciation; visual vocabulary and visual brief; an inventory of
    existing figures with a decision for each (reuse, rebuild step by step, simplify, new plot
@@ -72,16 +77,21 @@ user asks for; do not add your own for routine steps.
    verify the values. Record gaps and anything you would like the project to report but it has
    not. Read `references/evidence-and-integrity.md`.
 4. **Narration** (`script.md`). Every spoken word, organized by topic, with role tags, claim tags,
-   and pause marks, written for a TTS voice. Read `references/narration-and-tts.md`.
+   and pause marks, written for a TTS voice. Read `references/narration-and-tts.md` and
+   `references/engagement.md`.
 5. **Check the narration alone.** Could a listener follow the outline with no picture? Fix
    before moving on.
 6. **Storyboard** (`storyboard.md`). Figure specs first, then scenes: focus, what stays, what
    changes, the figure's reading step, exact on-screen data strings, motion verb, intensity,
    hold, duration. Read `references/visuals-and-figures.md`.
 7. **Check and review.** Run `python3 scripts/check_outputs.py <output dir>` and fix every FAIL.
+   Keep the storyboard within 10 percent of the target; beyond that, cut scope or tell the user.
    Then review against `references/review-rubric.md`, in a fresh sub-agent if your host has them.
    Record the results honestly in `evidence-and-review.md`.
-8. **Hand off.** Tell the user what is ready, the claims still unverified, the gaps, the
+8. **Hand off.** When a request conflicts with a hard rule (made-up data, an unreported number, a
+   disclaimer, a cause the data cannot show), do the compliant version and say so plainly in
+   the handoff: what was asked, what you did instead, and what would make the original possible
+   (for example, adding the number to the project's results). Then tell the user what is ready, the claims still unverified, the gaps, the
    proposed changes awaiting their decision, and what review has and has not happened (an agent
    review is not an expert review or a viewer test).
 
@@ -109,7 +119,7 @@ supplied materials unless asked.
 `examples/` has two complete runs built from real public data (Palmer Penguins, CC0), with the
 project's own analysis and results in `examples/penguin-project/`:
 
-- `examples/short-body-mass/`: about a minute and a half, two topics, compressed roles.
-- `examples/bill-paradox/`: about six minutes, five topics, contour plot, radar plot, and heat
-  map, a topic change over the same figure, a gap, an analogy with its limit, and a runtime
+- `examples/short-body-mass/`: under two minutes, two topics, compressed roles, one prediction.
+- `examples/bill-paradox/`: about seven minutes, five topics, the paradox as the opening puzzle,
+  two predictions, contour plot, radar plot, and heat map, a topic change over the same figure, a gap, an analogy with its limit, and a runtime
   extended after the checker flagged it.

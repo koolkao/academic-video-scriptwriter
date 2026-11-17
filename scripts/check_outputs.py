@@ -26,7 +26,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 FILES = ("teaching-plan.md", "script.md", "storyboard.md", "evidence-and-review.md")
-ROLES = {"goal", "hook", "roadmap", "announce", "introduce", "explain", "wrap-up", "bridge", "synthesis"}
+ROLES = {"goal", "hook", "puzzle", "roadmap", "announce", "introduce", "explain", "predict", "reveal",
+         "unknown", "wrap-up", "bridge", "synthesis"}
+MIN_THINK = 2.0  # seconds of pause a [predict] line must give the viewer
 TOPIC_ROLES = ("announce", "introduce", "explain", "wrap-up", "bridge")
 RESERVED_TOPICS = ("opening", "conclusion")
 FOCUS_VALUES = {"figure", "cursor", "figure + cursor"}
@@ -240,12 +242,12 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
 
     used_claims = set()
 
-    def use_claim(cid, where):
+    def use_claim(cid, where, roles=()):
         used_claims.add(cid)
         if cid not in claims:
             rep.fail(where, f"claim {cid} is not in the Claims table")
-        elif claims[cid]["status"] == "gap":
-            rep.fail(where, f"claim {cid} is a gap (no supporting data) but is used")
+        elif claims[cid]["status"] == "gap" and "unknown" not in roles:
+            rep.fail(where, f"claim {cid} is a gap (no supporting data); it may be spoken only in an [unknown] line")
 
     # ---- script
     phrases = load_phrases(phrases_path)
@@ -253,6 +255,8 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
     seen_topics, script_scene_topic, scene_words, scene_pause = [], {}, {}, {}
     roles_by_section = {}
     lines_by_section = {}
+    pending_predicts = {}  # section -> [lineno, ...] awaiting a [reveal]
+    predict_scenes = set()
     for i, line in enumerate(text["script.md"], 1):
         s = line.strip()
         where = f"script.md:{i}"
@@ -291,7 +295,7 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
             mark = mark.strip()
             if re.fullmatch(r"C\d+", mark):
                 line_claims.append(mark)
-                use_claim(mark, where)
+                use_claim(mark, where, roles)
             elif mark in PAUSE_SECONDS:
                 pause += PAUSE_SECONDS[mark]
             elif re.fullmatch(r"look:\s*\d+(\.\d+)?", mark):
@@ -300,6 +304,19 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
                 rep.fail(where, f"unknown mark {{{mark}}}")
         say = spoken(body)
         lines_by_section[cur].append((i, roles, say))
+        if "predict" in roles and "reveal" in roles:
+            rep.fail(where, "a prediction and its reveal cannot share a line; give the viewer time")
+        elif "predict" in roles:
+            pending_predicts.setdefault(cur, []).append(i)
+            predict_scenes.add(sid)
+            if pause < MIN_THINK:
+                rep.fail(where, f"[predict] gives {pause:.1f}s to think; add {{look:3}} or longer")
+            if "?" not in say:
+                rep.warn(where, "[predict] line asks no question")
+        elif "reveal" in roles and pending_predicts.get(cur):
+            pending_predicts[cur].pop(0)
+        if "unknown" in roles and not any(claims.get(c, {}).get("status") == "gap" for c in line_claims):
+            rep.warn(where, "[unknown] line should cite the gap claim it refers to")
         scene_words[sid] = scene_words.get(sid, 0) + len(say.split())
         scene_pause[sid] = scene_pause.get(sid, 0.0) + pause
 
@@ -351,6 +368,20 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
             rep.fail("script.md", f"roadmap does not name topic {tid} '{title}'")
     if "synthesis" not in roles_by_section.get("conclusion", set()):
         rep.fail("script.md", "conclusion is missing: synthesis")
+
+    # engagement
+    for sec, linenos in pending_predicts.items():
+        for ln in linenos:
+            rep.fail(f"script.md:{ln}", f"[predict] has no later [reveal] in the same section ({sec})")
+    reduced = brief.get("engagement", "").lower().startswith("reduced")
+    if "puzzle" in opening and "reveal" not in roles_by_section.get("conclusion", set()):
+        rep.fail("script.md", "the opening poses a [puzzle] but the conclusion has no [reveal] that answers it")
+    if not reduced:
+        if "puzzle" not in opening:
+            rep.warn("script.md", "the opening has no [puzzle]; see references/engagement.md "
+                                  "(or set 'Engagement: reduced, because …' in the Brief)")
+        if not any("predict" in r for r in roles_by_section.values()):
+            rep.warn("script.md", "no [predict] anywhere; one or two predictions hold attention")
 
     # ---- storyboard
     sb = text["storyboard.md"]
@@ -417,6 +448,9 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
             rep.fail(where, f"scene {sid} has no narration lines in script.md and is not marked silent")
         elif st is not None and topic and st != topic:
             rep.fail(where, f"scene {sid} is {topic} here but its narration sits under {st} in script.md")
+        if sid in predict_scenes and not fval(b, "withheld")[1]:
+            rep.fail(where, f"scene {sid} asks the viewer to predict but has no 'Withheld' field "
+                            "saying what stays off screen until the reveal")
         for key in ("look at", "focus by", "stays", "changes", "duration"):
             if not fval(b, key)[1]:
                 rep.fail(where, f"scene {sid} is missing '{key}'")
@@ -441,9 +475,11 @@ def check(out_dir: Path, wpm_override=None, phrases_path=None) -> Report:
             total += dur
             need = scene_words.get(sid, 0) / wpm * 60 + scene_pause.get(sid, 0.0)
             hold = parse_seconds(fval(b, "hold")[1]) or 0
-            if dur + 0.5 < need + hold * 0.5:
-                rep.warn(where, f"scene {sid} lasts {dur:.0f}s but its narration needs about "
-                                f"{need:.0f}s at {wpm} wpm")
+            required = need + hold * 0.5
+            if dur + 0.5 < required:
+                rep.warn(where, f"scene {sid} lasts {dur:.0f}s but needs about {required:.0f}s "
+                                f"({need:.0f}s of narration and pauses at {wpm} wpm, plus half "
+                                f"its {hold:.0f}s hold)")
 
         listed = re.findall(r"C\d+", fval(b, "claims")[1])
         for c in listed:

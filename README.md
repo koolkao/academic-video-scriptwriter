@@ -25,6 +25,11 @@ teacher easy to follow:
   → fill → pattern → takeaway.
 - **Real data only.** Numbers come from data and results your project already produced. The
   skill never makes up data and never computes new statistics; it proposes them for you to add.
+- **Engaging, the way good lecturers are.** The video opens with a puzzle from your data and
+  answers it at the end. Viewers are asked to predict before a reveal, with time to think and the
+  answer held off screen. The narration reasons out loud ("suppose… then we'd see…"), talks to
+  the viewer like a person, and says plainly what the data cannot tell us. These techniques are
+  borrowed from teachers such as Richard Feynman, not an imitation of anyone's voice.
 - **Narration that does not sound generated.** No disclaimers or stock qualifiers ("it's
   important to note", "results may vary"). Scope and uncertainty are stated as facts; full
   statistics go on screen. Text is prepared for TTS: no digits or symbols, a pronunciation table,
@@ -58,6 +63,8 @@ git clone https://github.com/koolkao/academic-video-scriptwriter ~/.claude/skill
 A line of narration:
 
 ```
+[S08] [predict] So here's the question. When each species gets its own color, will each group tilt up, or tilt down, like the whole cloud? {look:4}
+[S10] [reveal] Now trace each island on its own. Every one of them tilts *up*. If you guessed up, your reasoning held. {look:2}
 [S10] [explain] Within Adelies, the correlation is point three nine. Within Chinstraps, point six five. Within Gentoos, point six four. {C03} {C04} {C05} {beat}
 ```
 
@@ -89,7 +96,11 @@ Standard library only. It reads the four files and reports:
   topic missing its announcement, introduction, explanation, wrap-up, or bridge; a roadmap or
   announcement that does not say the topic title; a new topic with no visible marker; broken IDs.
 - **WARN**: unverified claims, acronyms with no pronunciation, quantities without a claim tag,
-  long sentences, scenes too short for their narration, runtime over target.
+  long sentences, scenes too short for their narration, runtime over target, no opening puzzle
+  or no prediction.
+- **FAIL** for engagement, too: a prediction with under two seconds to think, with no later
+  reveal, or whose scene does not say what is withheld; a puzzle the conclusion never answers; a
+  gap claim spoken anywhere but an `[unknown]` line.
 
 It checks structure, tracing, and TTS-readiness. It cannot tell whether a claim is true or a
 transition is good; `references/review-rubric.md` covers that, ideally in a fresh agent.
@@ -103,16 +114,16 @@ data (CC0). `examples/penguin-project/` stands in for a research project: raw da
 script, and its results tables.
 
 - [`examples/short-body-mass/`](examples/short-body-mass/): which species is the heavy one;
-  about a minute and a half, two topics, a strip plot and an interval plot.
-- [`examples/bill-paradox/`](examples/bill-paradox/): Simpson's paradox in bill shape; about six
-  minutes, five topics, a contour plot that splits by species, a radar plot, and correlation heat
+  under two minutes, two topics, a strip plot and an interval plot, one prediction.
+- [`examples/bill-paradox/`](examples/bill-paradox/): Simpson's paradox in bill shape; about seven
+  minutes, five topics, the paradox as the opening puzzle, two predictions, a contour plot that splits by species, a radar plot, and correlation heat
   maps. Includes a topic change over the same figure, a gap (diet), and an analogy with its limit.
 
 ## Layout
 
 ```
 SKILL.md                  entry point for the agent
-references/               structure, evidence, narration and TTS, visuals and figures, rubric, format
+references/               structure, evidence, narration and TTS, engagement, visuals, rubric, format
 templates/                the four output files
 scripts/                  check_outputs.py, banned_phrases.txt
 tests/                    checker tests
@@ -129,6 +140,9 @@ docs/                     design, construction plan, source and license review
 - The checker's quantity-word warning has false positives (for example "near zero" in a legend).
 
 ## Credits
+
+The engagement techniques are modeled on how teachers such as Richard Feynman explained
+things: puzzles, predictions, reasoning out loud, plain talk, and honesty about what is unknown.
 
 The design draws on ideas from
 [Educational Video Creator](https://github.com/skindhu/skind-skills/tree/main/skills/educational-video-creator)

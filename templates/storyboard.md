@@ -35,6 +35,7 @@
 - Stays: <persistent context>
 - Changes: <the one change>
 - Figure: F01, step frame
+- Withheld: <only on a scene with a [predict] line: what stays hidden until the reveal>
 - On screen: "<exact data-bearing strings>"
 - Orientation text: "<chapter heading>"
 - Motion: reveal

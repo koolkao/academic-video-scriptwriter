@@ -38,3 +38,38 @@
 | "One change at a time" was hard to meet in build scenes. | `Changes` may list an ordered sequence, each on its own narration cue. |
 
 Not yet run: cases 2, 3, 4, 6, 7, 9, 10, 11; a baseline comparison; any test with real viewers.
+
+## 2026-11-17, run 2 (v0.2, engagement)
+
+- **Setup and brief:** identical to run 1, on the v0.2 skill.
+- **Outputs:** `evals/runs/2026-11-17-run-2/` (written before the fixes below).
+- **Checker:** first draft FAIL 1 (the diet gap claim listed on a storyboard scene), WARN 12 (ten
+  timing: 530 words against a 360-word budget, so it cut hard; two untagged quantities). Final FAIL
+  0, WARN 0; storyboard 3:08 against 3:00.
+- **Fresh sub-agent review:** one blocking failure the checker cannot see. A reasoning-out-loud
+  line ("suppose bigger birds just have bigger bills") widened the claim to body size, which the
+  figure did not show. Rewritten.
+
+| Technique | Use |
+| --- | --- |
+| Puzzle | Pooled r = −0.24 posed as "that's odd"; answered in the conclusion. |
+| Prediction | "Inside each species, up, or down?" with four seconds, species colors withheld. |
+| Reasoning out loud | Two suppositions (a trade-off versus long-and-deep together), tested on screen. |
+| Conversational register | "you", contractions, a line for viewers who guessed down. |
+| Stated unknown | One `[unknown]` line: correlational data, diet not measured. |
+
+Cases 1, 5, 8, 12, 13 pass again.
+
+### Friction reported, and what changed
+
+| Friction | Fix |
+| --- | --- |
+| The engagement guide's sample puzzle stated the within-species answer, which spoils a later prediction. The author's own complex example had the same flaw. | The guide now says the puzzle poses the question and must not leak a prediction's answer (check the goal line too). The example's puzzle and goal were rewritten. |
+| Reasoning out loud pulled toward mechanisms the data cannot support (the blocking failure). | Suppositions must be testable by the data on screen, in its own terms; explanations of why a pattern appears are listed as interpretation. The complex example's supposition was rewritten the same way. |
+| All three special requests conflict with hard rules, and the skill declines them without asking, which may frustrate the user. | The handoff step now requires saying what was asked, what was done instead, and what would make the original possible. |
+| A 360-word budget barely holds a puzzle, roadmap, two topics, and a prediction. | Short-video guidance: puzzle shares the goal line, compressed roles, one prediction at most; cut content, not orientation. |
+| Is "stronger than pooled" a computation? | Comparing reported values (larger, smaller, opposite sign) is reading; by how much is computing. |
+| How far over target is acceptable? | Within 10 percent; beyond that, cut or tell the user. |
+| The checker warned "lasts 17s but needs about 17s". | The message now shows the hold allowance it adds. |
+
+Not yet run: cases 2, 3, 4, 6, 7, 9, 10, 11; a baseline comparison; any test with real viewers.

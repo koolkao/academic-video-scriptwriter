@@ -41,6 +41,13 @@ If you cannot name one focus for a scene, the scene is doing two things. Split i
   change (the outline highlight slides to the next item, the heading changes). Consistency is
   what makes it readable. Save spectacle for the content.
 
+## Holding back the answer
+
+When the narration asks the viewer to predict, the screen must not give the answer away. The
+scene's `Withheld` field says what stays hidden (the species colors, the last row of the heat
+map, the trend line), and the figure holds still through the thinking pause. The reveal is
+the next change, and often the topic's showpiece.
+
 ## Visual vocabulary
 
 The teaching plan fixes, for the whole video, the shape and color role of each recurring

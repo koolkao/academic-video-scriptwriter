@@ -1,4 +1,4 @@
-# Design: academic-video-scriptwriter v0.1
+# Design: academic-video-scriptwriter
 
 Date: 2026-11-17. Builds on `docs/construction-plan.md`; where they differ, this document wins.
 
@@ -44,6 +44,7 @@ qualifiers; a viewer could freeze any frame and not know what topic they are in 
 | Visual taste | Scientific graphics, graphs, numbers, statistics; complex academic figure types welcome. |
 | Approach | Text-only skill plus a small standard-library checker (adapted in spirit from the user's academic-humanizer preservation check); review in a fresh sub-agent when the host has one. |
 | Distribution | Public GitHub repository. |
+| Engagement (v0.2) | Built into the default workflow: opening puzzle answered at the end, predictions with thinking time and withheld answers, reasoning out loud, conversational register, plainly stated unknowns. Explaining before naming is optional. Techniques modeled on teachers such as Feynman, never an imitation of a person. A formal talk may set `Engagement: reduced` with a reason. |
 
 ## Approaches considered
 
@@ -54,6 +55,10 @@ qualifiers; a viewer could freeze any frame and not know what topic they are in 
    to a claim's values, banned phrasings, TTS-hostile text, required structure, timing.
 3. **Plus a mandatory separate reviewer.** Better comprehension review, but depends on host
    sub-agent support. Folded into option 2 as "use a fresh sub-agent if available".
+
+For engagement (v0.2) the options were: built into the default workflow (chosen); an on/off
+switch in the teaching plan (rejected: the user wants these by default); a rewrite pass after
+drafting (rejected: the puzzle and predictions have to shape the outline and storyboard).
 
 ## Calls made by the builder
 

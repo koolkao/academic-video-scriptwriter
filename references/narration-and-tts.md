@@ -29,7 +29,10 @@ enforces a list (`scripts/banned_phrases.txt`); the habit matters more than the 
 - State scope and uncertainty as facts inside the claim (see
   `evidence-and-integrity.md`, *Qualifiers without hedging*).
 - Cut sentences that announce importance instead of showing it ("This is a crucial point").
-- No rhetorical questions that the next sentence answers, more than once per video.
+- No filler questions that the next sentence answers ("So what does this mean? It means…").
+  Real questions are welcome: a prediction with thinking time, or the opening puzzle (see
+  `engagement.md`).
+- Talk to one listener: "you", contractions, varied sentence length (see `engagement.md`).
 - No three-adjective lists, no "not just X, but Y" constructions, no closing moral.
 
 ## Numbers, spoken and shown

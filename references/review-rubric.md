@@ -51,6 +51,7 @@ total does not offset a blocking failure.
 | Focus | One `Look at` per scene, led by figure or cursor, on time with the narration? |
 | Figure building | Complex figures built frame → anchor → fill → pattern → takeaway? |
 | Narration voice | No hedging, disclaimers, filler, or inflated words; reads naturally aloud? |
+| Engagement | Puzzle from the data answered at the end; predictions the viewer can reason toward, with time to think; reasoning out loud; conversational register; unknowns stated plainly? |
 | Timing | Narration, holds, and figure reading fit the target? |
 | Technology independence | Nothing tied to one tool, provider, or library? |
 

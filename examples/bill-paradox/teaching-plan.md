@@ -5,12 +5,20 @@
 - Audience: first-year undergraduate biology students
 - Prior knowledge: scatter plots, the idea of a correlation coefficient from minus one to one; not contour plots, radar plots, or correlation heat maps
 - Purpose: students can read the three figure types and explain how a trend can reverse when groups are pooled, using real field data
-- Target duration: 6:30
+- Target duration: 7:30
 - Speech rate: 150 wpm
 - Language: English
 - Materials: examples/penguin-project (raw data, results tables, dataset README)
 - Requested by the brief but not supported: "explain that diet causes the different bill shapes" (see evidence file, Gaps)
+- Engagement: full
 - Assumptions: classroom use, landscape, captions on; students can pause
+
+## Puzzle
+
+- Question: pooled, longer bills go with shallower bills. Shouldn't a bigger bill be bigger every way? (The within-species answer is held back for the T3 prediction.)
+- Rests on: C02, C03, C04, C05
+- Answered in: T3 (the split), T4 (why the islands sit apart), and the conclusion's reveal
+- Predictions: T3, before the colors appear ("up or down?"; species colors withheld); T5, before the Gentoo grid ("what will the cool row do?"; Gentoo grid withheld)
 
 ## Objectives
 
@@ -85,8 +93,11 @@
 
 ## Timing
 
-The first draft targeted 5:00. The checker estimated the narration at 746 words, about 5:42
-with pauses, and the storyboard at 6:16 once figure holds were added. Options: drop T5 (the heat
-map), fold T1 into T2, or extend. T1 is a prerequisite for T2 and T3, and T5 is the only heat
-map, so the runtime was extended to 6:30; the audience is a class that can pause. If a hard
-five-minute limit applies, cut T5 and keep O1 to O4.
+The first draft targeted 5:00. The checker estimated the narration at about 5:42 and the
+storyboard at 6:16, so the runtime was extended to 6:30 rather than dropping T1 (a prerequisite)
+or T5 (the only heat map); the audience is a class that can pause.
+
+Version 0.2 added the opening puzzle, two predictions with four-second thinking pauses,
+reasoning out loud before the split, and a spoken unknown. That cost about 130 words and, with
+the pauses, about a minute of storyboard time (6:16 to 7:24), so the target moved to 7:30. If a
+hard limit applies, cut T5 first; O1 to O4 carry the main lesson.

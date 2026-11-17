@@ -24,7 +24,7 @@
 
 ### S01 · opening
 
-- Narration: goal, roadmap
+- Narration: puzzle, roadmap
 - Look at: the title, then the outline strip
 - Focus by: figure
 - Stays: nothing yet
@@ -33,28 +33,29 @@
 - Motion: build
 - Intensity: calm
 - Hold: 1s
-- Duration: 15s
+- Duration: 19s
 
 ### S02 · T1
 
-- Narration: announce, introduce
+- Narration: announce, introduce, predict
 - Topic change: outline item one lights up
 - Look at: the empty axes
 - Focus by: figure
 - Stays: outline strip
 - Changes: F01 frame appears: body mass axis and three labeled species columns
 - Figure: F01, step frame
+- Withheld: every dot; the three species columns stay empty through the guess
 - On screen: "n = 342 · 2007–2009"
 - Orientation text: "Weight by species"
 - Motion: reveal
 - Intensity: calm
 - Hold: 1s
-- Duration: 10s
+- Duration: 20s
 - Claims: C06
 
 ### S03 · T1
 
-- Narration: explain
+- Narration: reveal, explain
 - Look at: the dots as they land, then the Gentoo column
 - Focus by: figure
 - Stays: outline strip, axes, species labels
@@ -119,7 +120,7 @@
 
 ### S07 · conclusion
 
-- Narration: synthesis
+- Narration: synthesis, reveal
 - Topic change: both outline items lit; F01 and F02 side by side
 - Look at: the two figures together
 - Focus by: figure
@@ -131,5 +132,5 @@
 - Motion: compare
 - Intensity: calm
 - Hold: 2s
-- Duration: 10s
+- Duration: 13s
 - Claims: C01, C02, C05

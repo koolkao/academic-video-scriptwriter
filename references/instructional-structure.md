@@ -8,13 +8,13 @@ Every rule here serves one of those four.
 
 | Stage | Narration | Visual |
 | --- | --- | --- |
-| Opening | Learning goal, why it matters to this audience, and the outline: every topic title, in order. A short hook is allowed if it does not push the outline out. | The home visual or outline strip with every topic named. |
+| Opening | A puzzle from the data (see `engagement.md`), the learning goal, why it matters to this audience, and the outline: every topic title, in order. The puzzle never pushes the outline out. | The puzzle's figure, then the home visual or outline strip with every topic named. |
 | Announce | Name the topic with its outline title, word for word. | The outline item lights up, or the chapter heading changes. |
 | Introduce | One or two sentences: the question this topic answers and what it builds on. | Orient the viewer to the figure, example, or context they are about to use. |
 | Explain | Ideas in prerequisite order. Define a term before reasoning with it. One example where it helps. | Reveal each piece as the narration reaches it. Keep the context needed to read it. |
 | Wrap up | One or two sentences stating the takeaway. | Hold or simplify the figure into its conclusion. This is where the topic's showpiece lands. |
 | Bridge | Say how this topic connects to the next one, then name the move. | A visible topic change: the outline highlight moves, the heading changes. |
-| Conclusion | Return to the outline and connect the takeaways into one model. No new claims. | The completed outline or the integrated figure. |
+| Conclusion | Return to the outline, connect the takeaways into one model, and answer the opening puzzle. No new claims. | The completed outline or the integrated figure. |
 
 The last topic's bridge leads into the conclusion, not into an invented extra topic.
 

@@ -69,7 +69,7 @@ class Narration(Base):
         self.assertFails("banned phrase")
 
     def test_hedge_stack(self):
-        self.edit("script.md", "So the Gentoo is the heavy one.", "So the Gentoo could potentially be the heavy one.")
+        self.edit("script.md", "So it's the Gentoo.", "So it could potentially be the Gentoo.")
         self.assertFails("could potentially")
 
     def test_unknown_mark(self):
@@ -176,14 +176,56 @@ class Evidence(Base):
         self.assertFails("figure F02 names no data source")
 
 
+class Engagement(Base):
+    def test_predict_needs_thinking_time(self):
+        self.edit("script.md", "which is the heavy one? {look:3}", "which is the heavy one? {beat}")
+        self.assertFails("gives 0.8s to think")
+
+    def test_predict_needs_reveal(self):
+        self.edit("script.md", "[S03] [reveal] Each dot", "[S03] [explain] Each dot")
+        self.assertFails("has no later [reveal]")
+
+    def test_predict_and_reveal_cannot_share_a_line(self):
+        self.edit("script.md", "[S02] [predict]", "[S02] [predict+reveal]")
+        self.assertFails("cannot share a line")
+
+    def test_predict_scene_needs_withheld(self):
+        self.edit("storyboard.md", "- Withheld: every dot; the three species columns stay empty through the guess\n", "")
+        self.assertFails("has no 'Withheld' field")
+
+    def test_puzzle_needs_answer(self):
+        self.edit("script.md", "[S07] [reveal]", "[S07] [synthesis]")
+        self.assertFails("the conclusion has no [reveal]")
+
+    def test_no_puzzle_warns_unless_reduced(self):
+        self.edit("script.md", "[S01] [puzzle+goal]", "[S01] [goal]")
+        self.assertWarns("the opening has no [puzzle]")
+        self.edit("teaching-plan.md", "- Engagement: full", "- Engagement: reduced, because formal talk")
+        rep = self.run_check()
+        self.assertFalse(any("[puzzle]" in w for w in rep.warns))
+
+    def test_gap_claim_allowed_in_unknown_line(self):
+        self.edit("evidence-and-review.md", "verified |\n\n## Simplifications and analogies",
+                  "verified |\n| C07 | Why Gentoos are heavier | — | — | no diet or ecology variables in D04 | gap |\n\n## Simplifications and analogies")
+        self.edit("script.md", "[S07] [synthesis] Adelie", "[S07] [unknown] These data can't say why Gentoos are heavier. {C07}\n[S07] [synthesis] Adelie")
+        rep = self.run_check()
+        self.assertEqual(rep.fails, [])
+
+    def test_gap_claim_outside_unknown_fails(self):
+        self.edit("evidence-and-review.md", "verified |\n\n## Simplifications and analogies",
+                  "verified |\n| C07 | Why Gentoos are heavier | — | — | no diet or ecology variables in D04 | gap |\n\n## Simplifications and analogies")
+        self.edit("script.md", "[S07] [synthesis] Adelie", "[S07] [explain] Gentoos are heavier because of their diet. {C07}\n[S07] [synthesis] Adelie")
+        self.assertFails("may be spoken only in an [unknown] line")
+
+
 class Timing(Base):
     def test_over_target(self):
-        self.edit("teaching-plan.md", "- Target duration: 1:45", "- Target duration: 0:45")
+        self.edit("teaching-plan.md", "- Target duration: 2:00", "- Target duration: 0:45")
         self.assertWarns("over the 0:45 target")
 
     def test_scene_too_short(self):
         self.edit("storyboard.md", "- Duration: 16s", "- Duration: 4s")
-        self.assertWarns("scene S03 lasts 4s")
+        self.assertWarns("scene S03 lasts 4s but needs about")
 
 
 class Helpers(unittest.TestCase):

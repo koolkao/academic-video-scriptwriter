@@ -5,11 +5,19 @@
 - Audience: general public, curious adults; no statistics training assumed
 - Prior knowledge: knows what an average is; has not met confidence intervals
 - Purpose: viewers can say which of three penguin species is heaviest and how sure the data are
-- Target duration: 1:45
+- Target duration: 2:00
 - Speech rate: 150 wpm
 - Language: English
 - Materials: examples/penguin-project (raw data and results tables)
+- Engagement: full
 - Assumptions: under two minutes; landscape; captions on
+
+## Puzzle
+
+- Question: one of three species outweighs the others by more than a kilogram. Which one, and how sure can we be?
+- Rests on: C05, C06
+- Answered in: T1 (which one), T2 (how sure), and the conclusion's reveal
+- Predictions: T1, before the dots land ("which is the heavy one?"; all dots withheld)
 
 ## Objectives
 
@@ -70,7 +78,7 @@ itself (frame step), rather than as its own topic, because the video is short.
 
 ## Timing
 
-183 spoken words at 150 wpm is about 73 seconds; with 12 seconds of pauses the narration
-runs about 1:25, and figure holds and transitions bring the storyboard to 1:38. The first draft
-aimed at 1:15 and ran over; the checker flagged it, and the target moved to 1:45 rather than
-cutting the interval, which carries objective O2.
+The first draft aimed at 1:15 and ran 1:38; the checker flagged it, and the target moved to 1:45
+rather than cutting the interval, which carries objective O2. Version 0.2 added the puzzle and a
+prediction with a three-second pause: 213 spoken words and 15 seconds of pauses, about 1:40 of
+narration and 1:55 of storyboard. Target now 2:00.

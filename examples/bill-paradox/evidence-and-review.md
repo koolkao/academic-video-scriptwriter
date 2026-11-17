@@ -37,12 +37,17 @@
 - **"The negative trend came from where the islands sit" (T3) and "that placement tilts the
   pooled trend" (T4).** Interpretation of the figures, not a reported statistic. It is the
   standard reading of Simpson's paradox with these data. No number is attached to it.
+- **"Suppose a bill simply grows in every direction at once" (T3).** A supposition stated in the
+  terms of the figure (bill length and depth only), tested on screen by the within-species
+  correlations, and answered in the conclusion. It is not a claim about growth: the data are one
+  measurement per bird.
 - **"The middle ring is the average penguin" (T4).** Exact for z = 0 against the pooled mean.
 
 ## Gaps
 
 - **C12, diet as cause of bill shape.** The brief asked for it; the project has no diet data.
-  Left out of the script. Replacement: T4 describes how the species differ, without saying why.
+  Not used as an explanation. T4 describes how the species differ without saying why, and the
+  conclusion's `[unknown]` line says plainly that diet was not measured.
 
 ## Proposed substantive changes
 
@@ -74,8 +79,9 @@
 | Terminology | 3 | "pooled", "within species", "profile" kept fixed. |
 | Focus | 3 | Cursor used for single heat-map cells and radar spokes; figure-led elsewhere. |
 | Figure building | 3 | All four figures follow frame, anchor, fill, pattern, takeaway. |
-| Narration voice | 3 | No hedging; the scope is stated as fact in the conclusion. |
-| Timing | 2 | First draft ran 5:42 against 5:00; runtime extended to 6:30 rather than compressing T1 or dropping T5. |
+| Narration voice | 3 | No hedging; contractions and direct address; the scope is stated as fact in the conclusion. |
+| Engagement | 3 | Opening puzzle answered by the conclusion's reveal; two predictions with four-second pauses and withheld answers; T3 reasons out loud before the split; diet named as an unknown. |
+| Timing | 2 | First draft ran 5:42 against 5:00; runtime extended to 6:30 rather than compressing T1 or dropping T5; v0.2 engagement added about a minute, target 7:30. |
 | Technology independence | 3 | No tool-specific instructions. |
 
 Scored by the drafting agent; not a fresh-context review.

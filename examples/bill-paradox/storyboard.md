@@ -52,7 +52,7 @@
 - Motion: build
 - Intensity: calm
 - Hold: 1s
-- Duration: 32s
+- Duration: 36s
 - Claims: C01
 
 ### S02 · T1
@@ -68,7 +68,7 @@
 - Motion: reveal
 - Intensity: calm
 - Hold: 1s
-- Duration: 12s
+- Duration: 15s
 
 ### S03 · T1
 
@@ -82,7 +82,7 @@
 - Motion: highlight, trace, build
 - Intensity: build
 - Hold: 2s
-- Duration: 24s
+- Duration: 26s
 
 ### S04 · T1
 
@@ -126,7 +126,7 @@
 - Motion: draw
 - Intensity: build
 - Hold: 2s
-- Duration: 17s
+- Duration: 20s
 - Claims: C02
 
 ### S07 · T2
@@ -142,27 +142,28 @@
 - Motion: dim
 - Intensity: calm
 - Hold: 2s
-- Duration: 15s
+- Duration: 18s
 - Claims: C02
 
 ### S08 · T3
 
-- Narration: announce, introduce
+- Narration: announce, introduce, explain, predict
 - Topic change: outline highlight slides to item three; the same axes stay, and the chapter heading changes
 - Look at: the gray contours, about to split
 - Focus by: figure
 - Stays: outline strip, axes, faint pooled line
 - Changes: chapter heading changes; the gray contours shimmer once to signal the split
 - Figure: F02, step frame
+- Withheld: species colors and the within-species trend lines; the contours stay gray and still through the question
 - Orientation text: "3 · Splitting by species"
 - Motion: hold
 - Intensity: calm
 - Hold: 1s
-- Duration: 9s
+- Duration: 34s
 
 ### S09 · T3
 
-- Narration: explain
+- Narration: reveal, explain
 - Look at: each island as it is named
 - Focus by: figure
 - Stays: outline strip, axes, faint pooled line
@@ -178,7 +179,7 @@
 
 ### S10 · T3
 
-- Narration: explain
+- Narration: reveal, explain
 - Look at: each upward trend line in turn
 - Focus by: figure
 - Stays: outline strip, three islands, faint pooled line
@@ -189,7 +190,7 @@
 - Motion: draw
 - Intensity: build
 - Hold: 2s
-- Duration: 17s
+- Duration: 20s
 - Claims: C03, C04, C05
 
 ### S11 · T3
@@ -252,7 +253,7 @@
 - Motion: highlight
 - Intensity: peak
 - Hold: 2s
-- Duration: 21s
+- Duration: 24s
 - Claims: C06, C08
 
 ### S15 · T5
@@ -273,23 +274,24 @@
 
 ### S16 · T5
 
-- Narration: explain
+- Narration: explain, predict
 - Look at: the flipper length by body mass cell, then the bill depth row
 - Focus by: figure + cursor
 - Stays: outline strip, pooled grid, color scale
 - Changes: the cursor lands on one cell, which fills; all cells fill; the bill depth row highlights
 - Figure: F04, steps anchor, fill, pattern
+- Withheld: the Gentoo grid; the pooled grid holds still with the bill depth row lit through the question
 - On screen: "0.87" · "−0.24" · "−0.58" · "−0.47" · "0.66" · "0.6"
 - Orientation text: "5 · Every pair of measurements"
 - Motion: move, build, highlight
 - Intensity: build
 - Hold: 2s
-- Duration: 19s
+- Duration: 29s
 - Claims: C09
 
 ### S17 · T5
 
-- Narration: explain, wrap-up, bridge
+- Narration: reveal, wrap-up, bridge
 - Look at: the Gentoo grid, all warm
 - Focus by: figure
 - Stays: outline strip, pooled grid
@@ -300,22 +302,22 @@
 - Motion: compare
 - Intensity: peak
 - Hold: 3s
-- Duration: 25s
+- Duration: 28s
 - Claims: C10
 
 ### S18 · conclusion
 
-- Narration: synthesis
+- Narration: synthesis, reveal, unknown
 - Topic change: all five outline items light; one small panel per topic lines up beneath them
 - Look at: each panel as the narration reaches it
 - Focus by: figure
 - Stays: outline strip, fully lit
-- Changes: the five panels light in turn, from left to right
+- Changes: the five panels light in turn, from left to right; on the unknown line, an empty sixth slot labeled "diet: not measured" appears and stays
 - Figure: F01, F02, F03, F04, step takeaway
 - On screen: "pooled r = −0.24" · "within species r = 0.39, 0.65, 0.64" · "n = 342 · 2007–2009"
-- Orientation text: "Reading a contour plot" · "The pooled trend" · "Splitting by species" · "Species profiles" · "Every pair of measurements"
+- Orientation text: "Reading a contour plot" · "The pooled trend" · "Splitting by species" · "Species profiles" · "Every pair of measurements" · "diet: not measured"
 - Motion: build
 - Intensity: calm
 - Hold: 3s
-- Duration: 43s
+- Duration: 56s
 - Claims: C01, C02, C03, C04, C05, C08, C10

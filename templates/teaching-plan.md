@@ -9,7 +9,15 @@
 - Speech rate: 150 wpm
 - Language: <language>
 - Materials: <results files, data files, manuscript, figures the user supplied>
+- Engagement: full
 - Assumptions: <anything you assumed instead of asking>
+
+## Puzzle
+
+- Question: <an odd observation or contradiction from the data, stated as fact>
+- Rests on: <C IDs>
+- Answered in: <conclusion, and the topic where the key step happens>
+- Predictions: <where the viewer is asked to guess, and what is withheld until the reveal>
 
 ## Objectives
 
