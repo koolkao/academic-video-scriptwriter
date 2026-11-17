@@ -1,0 +1,13 @@
+species,measure,n,mean,sd
+Adelie,bill_length_mm,151,38.8,2.7
+Adelie,bill_depth_mm,151,18.3,1.2
+Adelie,flipper_length_mm,151,190.0,6.5
+Adelie,body_mass_g,151,3700.7,458.6
+Chinstrap,bill_length_mm,68,48.8,3.3
+Chinstrap,bill_depth_mm,68,18.4,1.1
+Chinstrap,flipper_length_mm,68,195.8,7.1
+Chinstrap,body_mass_g,68,3733.1,384.3
+Gentoo,bill_length_mm,123,47.5,3.1
+Gentoo,bill_depth_mm,123,15.0,1.0
+Gentoo,flipper_length_mm,123,217.2,6.5
+Gentoo,body_mass_g,123,5076.0,504.1

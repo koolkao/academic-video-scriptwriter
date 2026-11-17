@@ -1,0 +1,71 @@
+# Phrases that must not appear in spoken narration.
+# One per line, case-insensitive, matched on word boundaries. Lines starting with # are ignored.
+# Edit freely: add phrases your listeners notice, remove ones your field uses for real.
+
+# Stock disclaimers and empty qualifiers
+it's important to note
+it is important to note
+it's worth noting
+it is worth noting
+worth mentioning
+it should be noted
+keep in mind that
+results may vary
+more research is needed
+further research is needed
+further studies are needed
+should be interpreted with caution
+this is not medical advice
+needless to say
+of course
+to be fair
+it goes without saying
+may potentially
+could potentially
+might potentially
+could possibly
+may possibly
+might possibly
+
+# Meta-narration and presenter filler
+in this video
+in today's video
+in this lesson we will explore
+let's dive
+dive into
+deep dive
+let's explore
+without further ado
+buckle up
+stay tuned
+so, let's get started
+let's get started
+let's unpack
+unpack this
+
+# Inflated vocabulary
+delve
+delves
+delving
+tapestry
+realm of
+journey
+game-changer
+game changer
+groundbreaking
+paradigm shift
+unlock
+unlocks
+harness the power
+cutting-edge
+fascinating
+intricate
+pivotal
+crucial role
+plays a key role
+navigate the complexities
+a testament to
+shed light on
+sheds light on
+at the end of the day
+in a nutshell
